@@ -87,6 +87,7 @@ namespace EjemploPOO
             this.btnFrenar.TabIndex = 3;
             this.btnFrenar.Text = "Frenar";
             this.btnFrenar.UseVisualStyleBackColor = true;
+            this.btnFrenar.Click += new System.EventHandler(this.btnFrenar_Click);
             // 
             // btnApagar
             // 
@@ -96,6 +97,7 @@ namespace EjemploPOO
             this.btnApagar.TabIndex = 4;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // txtEstado
             // 

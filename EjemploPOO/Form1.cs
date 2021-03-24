@@ -70,5 +70,18 @@ namespace EjemploPOO
             }
             actualizarTablero();
         }
+
+        private void btnFrenar_Click(object sender, EventArgs e)
+        {
+            carrito.FrenarMotor();
+            actualizarTablero();
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            carrito.ApagarMotor();
+            actualizarTablero();
+            this.txtEstado.Text = "Apagado";
+        }
     }
 }

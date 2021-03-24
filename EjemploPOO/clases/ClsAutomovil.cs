@@ -9,19 +9,18 @@ namespace EjemploPOO.clases
     class ClsAutomovil
     {
         public String marca { get;  }
+   
         public string color { get; }
         public int velocidadMaxima { get; }
         public int velocidadActual { get; private set; }
         public bool encendido { get; private set; }
         
-
         public ClsAutomovil(String marca, String color , int velMax)
         {
             this.marca = marca;
             this.color = color;
             this.velocidadMaxima = velMax;
         }
-
         public void EncenderMotor()
         {
             encendido = true;
@@ -53,6 +52,10 @@ namespace EjemploPOO.clases
                 return true;
             }
         }
-
+        public void ApagarMotor()
+        {
+            this.velocidadActual = 0;
+            this.encendido = false;
+        }
     }
 }
