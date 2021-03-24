@@ -8,20 +8,51 @@ namespace EjemploPOO.clases
 {
     class ClsAutomovil
     {
-        public String marca { get; set; }
-        public int vel_max { get; set; }
+        public String marca { get;  }
+        public string color { get; }
+        public int velocidadMaxima { get; }
+        public int velocidadActual { get; private set; }
+        public bool encendido { get; private set; }
+        
 
-        public int velocidadActual { get; set; }
-        public bool encendido { get; set; }
-
-        public string color { get; set; }
-
-
+        public ClsAutomovil(String marca, String color , int velMax)
+        {
+            this.marca = marca;
+            this.color = color;
+            this.velocidadMaxima = velMax;
+        }
 
         public void EncenderMotor()
         {
             encendido = true;
-            vel_max = 0;
+            velocidadActual = 0;
         }
+        public bool AcelerarMotor()
+        {
+            int nuevaVelocidad = this.velocidadActual + 10;
+            if (nuevaVelocidad > this.velocidadMaxima)
+            {
+                return false;
+            }
+            else
+            {
+                this.velocidadActual = nuevaVelocidad;
+                return true;
+            }
+        }
+        public bool FrenarMotor()
+        {
+            int nuevaVelocidad = this.velocidadActual - 10;
+            if (nuevaVelocidad <0)
+            {
+                return false;
+            }
+            else
+            {
+                this.velocidadActual = nuevaVelocidad;
+                return true;
+            }
+        }
+
     }
 }
