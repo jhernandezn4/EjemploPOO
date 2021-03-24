@@ -15,7 +15,7 @@ namespace EjemploPOO.clases
         public int velocidadMaxima { get; }
         public int velocidadActual { get; private set; }
         public bool encendido { get; private set; }
-        SoundPlayer sonidoEncendido = new SoundPlayer(@"C:/Users/GAMERS/source/repos/EjemploPOO/EjemploPOO/sonidos/encender.wav");
+        SoundPlayer sonidoEncender = new SoundPlayer(@"C:/Users/GAMERS/source/repos/EjemploPOO/EjemploPOO/sonidos/encender.wav");
         SoundPlayer sonidoAcelerar = new SoundPlayer(@"C:/Users/GAMERS/source/repos/EjemploPOO/EjemploPOO/sonidos/acelerar.wav");
 
         public ClsAutomovil(String marca, String color , int velMax)
@@ -30,7 +30,7 @@ namespace EjemploPOO.clases
             if (!this.encendido)
             {
                 
-                this.sonidoEncendido.Play();
+                this.sonidoEncender.Play();
                 this.encendido = true;
                 velocidadActual = 10;
             }
