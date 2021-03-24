@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,9 @@ namespace EjemploPOO.clases
         public int velocidadMaxima { get; }
         public int velocidadActual { get; private set; }
         public bool encendido { get; private set; }
-        
+        SoundPlayer sonidoEncendido = new SoundPlayer(@"C:/Users/GAMERS/source/repos/EjemploPOO/EjemploPOO/sonidos/encender.wav");
+        SoundPlayer sonidoAcelerar = new SoundPlayer(@"C:/Users/GAMERS/source/repos/EjemploPOO/EjemploPOO/sonidos/acelerar.wav");
+
         public ClsAutomovil(String marca, String color , int velMax)
         {
             this.marca = marca;
@@ -23,8 +26,15 @@ namespace EjemploPOO.clases
         }
         public void EncenderMotor()
         {
-            encendido = true;
-            velocidadActual = 10;
+
+            if (!this.encendido)
+            {
+                
+                this.sonidoEncendido.Play();
+                this.encendido = true;
+                velocidadActual = 10;
+            }
+            
         }
         public bool AcelerarMotor()
         {
@@ -36,6 +46,7 @@ namespace EjemploPOO.clases
             else
             {
                 this.velocidadActual = nuevaVelocidad;
+                this.sonidoAcelerar.Play();
                 return true;
             }
         }
