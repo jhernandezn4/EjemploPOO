@@ -25,7 +25,7 @@ namespace EjemploPOO.clases
         public void EncenderMotor()
         {
             encendido = true;
-            velocidadActual = 0;
+            velocidadActual = 10;
         }
         public bool AcelerarMotor()
         {
